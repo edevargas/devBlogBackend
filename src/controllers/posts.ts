@@ -1,4 +1,5 @@
 const postsRouter = require('express').Router()
+import Person from '../models/Person'
 import { Request, Response, NextFunction } from 'express'
 import Post, { IPost } from '../models/Post'
 
@@ -29,6 +30,10 @@ postsRouter.post('/', async (request: Request, response: Response, next: NextFun
   })
   try {
     const savedPost = await newPost.save()
+    const author = await Person.findById(post.author)
+    author.posts.push(savedPost)
+    await author.save()
+
     response.json(savedPost)
   } catch (error) {
     next(error)
