@@ -7,13 +7,12 @@ import {
 } from './helpers/postsHelper'
 
 beforeEach(async () => {
-  jest.setTimeout(10000)
   await Person.deleteMany({}).exec()
   const newPerson = new Person({
-    'name': 'Eduardo',
-    'lastname': 'Lara',
-    'email': 'eduardo@gmail.com',
-    'birthDate': 13134234234
+    "name": "Eduardo",
+    "lastname": "Lara",
+    "email": "eduardo@gmail.com",
+    "birthDate": 1231231231
   })
   await newPerson.save()
 })
@@ -25,15 +24,15 @@ describe('Persons', () => {
         .expect(200)
         .expect('Content-Type', /application\/json/)
     })
-    test('should get All people', async () => {
+    test('should create one people', async () => {
       const peopleDB = await Person.find({})
       const peopleBefore = peopleDB.map((u: IPerson) => u.toJSON())
-      const newPerson = new Person({
-        'name': 'Pablo',
-        'lastname': 'Jaramillo',
-        'email': 'pablo@gmail.com',
-        'birthDate': 123123123123
-      })
+      const newPerson = {
+        "name": "Eren",
+        "lastname": "Jeager",
+        "email": "erenardo@gmail.com",
+        "birthDate": 1231231231
+      }
       await api
         .post('/api/people')
         .send(newPerson)

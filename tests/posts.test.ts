@@ -136,6 +136,6 @@ describe('Posts', () => {
 })
 
 afterAll(() => {
-  mongoose.connection.close()
+  mongoose.disconnect()
   server.close()
 })

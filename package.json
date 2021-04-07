@@ -12,8 +12,8 @@
     "tsc": "tsc",
     "test": "cross-env NODE_ENV=test PORT=3002 jest --verbose --silent",
     "test:watch": "yarn test --watch",
-    "test:projects": "yarn test tests/projects.test.ts",
-    "test:users": "yarn test tests/users.test.ts"
+    "test:posts": "yarn test tests/posts.test.ts",
+    "test:people": "yarn test tests/people.test.ts"
   },
   "keywords": [],
   "author": "",
