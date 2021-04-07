@@ -10,7 +10,7 @@ export interface IPerson extends Document {
       ref: 'Post'
     }
   ];
-  birthDate?: Date;
+  birthDate?: number;
 }
 
 const PersonSchema: Schema = new Schema({
@@ -18,7 +18,7 @@ const PersonSchema: Schema = new Schema({
   lastname: { type: String, required: true },
   email: { type: String, required: true },
   posts: { type: Array, required: false },
-  birthDate: { type: Date, required: false }
+  birthDate: { type: Number, required: false }
 })
 PersonSchema.set('toJSON', {
   transform: (document: any, returnedObject: any) => {
