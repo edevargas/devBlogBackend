@@ -5,8 +5,8 @@
   "main": "src/index.ts",
   "scripts": {
     "dev": "cross-env NODE_ENV=development ts-node-dev src/index.ts",
-    "start": "npm build && cross-env NODE_ENV=production node build/src/index.js",
-    "build": "rimraf ./build && tsc",
+    "start": "npm build:prod && cross-env NODE_ENV=production node build/src/index.js",
+    "build:prod": "rimraf ./build && tsc",
     "lint": "eslint --ext .ts .",
     "lint:fix": "eslint --fix",
     "tsc": "tsc",
