@@ -23,9 +23,10 @@
       "@middlewares/*": ["src/middlewares/*"],
       "@db/*": ["src/db/*"]
   },
-  "typeRoots": ["node_modules/@types"]
+  "typeRoots": ["node_modules/@types", "./@types"]
   },
   "include": [
     "**/*.ts" 
-  ]
+  ],
+  "exclude": ["node_modules", "tests"]
 }
