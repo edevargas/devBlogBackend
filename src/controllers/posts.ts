@@ -16,6 +16,26 @@ postsRouter.get('/:id', (request: Request, response: Response, next: NextFunctio
     })
     .catch(next)
 })
+postsRouter.get('/author/:id', async (request: Request, response: Response, next: NextFunction) => {
+  const { id } = request.params
+  const author = await Person.findById(id)
+  if (author && author?.posts) {
+    const posts = author.posts
+    const authorSimple = {
+      name: author.name,
+      lastname: author.lastname,
+      email: author.lastname,
+      id: author.id
+    }
+    const postWithAuthor = posts.map((p: any) => {
+      return { ...p, authorInfo: authorSimple }
+    })
+    response.json(postWithAuthor)
+  } else {
+    response.status(404).end()
+  }
+
+})
 
 postsRouter.post('/', async (request: Request, response: Response, next: NextFunction) => {
   const post = request.body
