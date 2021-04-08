@@ -7,7 +7,7 @@ const cors = require('cors')
 const app = express()
 if (process.env.NODE_ENV != 'test') {
   Sentry.init({
-    dsn: process.env.SENTRY_DSN || 'https://7d89f2ebd0b14eb1aeed565b79b544fb@o556750.ingest.sentry.io/5688136',
+    dsn: process.env.SENTRY_DSN,
     integrations: [
       // enable HTTP calls tracing
       new Sentry.Integrations.Http({ tracing: true }),
