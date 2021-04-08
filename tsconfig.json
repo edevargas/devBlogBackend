@@ -23,11 +23,8 @@
       "@middlewares/*": ["src/middlewares/*"],
       "@db/*": ["src/db/*"]
   },
+  "typeRoots": ["overrides", "node_modules/@types"]
   },
-  "typeRoots": [
-    "index.d.ts",
-    "./node_modules/@types/"
-  ],
   "include": [
     "**/*.ts" 
   ],

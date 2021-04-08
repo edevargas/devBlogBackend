@@ -5,7 +5,7 @@ const { NODE_ENV, MONGO_DB_URI, MONGO_DB_URI_TEST } = process.env
 let connectionString = ''
 switch (NODE_ENV) {
   case 'production':
-    connectionString = MONGO_DB_URI || 'mongodb+srv://edevargas:jIv6Z9WvXLrz8EVq@clusterdev.mb70m.mongodb.net/devBlogTest?retryWrites=true&w=majority'
+    connectionString = MONGO_DB_URI || ''
     break
   case 'development':
     connectionString = MONGO_DB_URI || ''
