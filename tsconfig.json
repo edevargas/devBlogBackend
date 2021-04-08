@@ -23,12 +23,9 @@
       "@middlewares/*": ["src/middlewares/*"],
       "@db/*": ["src/db/*"]
   },
-  "typeRoots": ["overrides", "node_modules/@types"]
+  "typeRoots": ["node_modules/@types"]
   },
   "include": [
     "**/*.ts" 
-  ],
-  "exclude": [
-    "node_modules"
   ]
 }
