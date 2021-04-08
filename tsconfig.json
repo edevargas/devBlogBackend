@@ -24,5 +24,14 @@
       "@db/*": ["src/db/*"]
   },
   },
-  "include": ["**/*.ts"]
+  "typeRoots": [
+    "index.d.ts",
+    "./node_modules/@types/"
+  ],
+  "include": [
+    "**/*.ts" 
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

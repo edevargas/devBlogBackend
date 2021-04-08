@@ -1,6 +1,5 @@
 const peopleRouter = require('express').Router()
 import { Request, Response, NextFunction } from 'express'
-import encrypt from '../utils/encrypt'
 import Person, { IPerson } from '../models/Person'
 
 peopleRouter.get('/', async (request: Request, response: Response, next: NextFunction) => {
@@ -70,35 +69,5 @@ peopleRouter.put('/:id', async (request: Request, response: Response, next: Next
     next(error)
   }
 })
-
-peopleRouter.put('/update_password/:id', async (request: Request, response: Response, next: NextFunction) => {
-  const { id } = request.params
-  const { password } = request.body
-  if (!password) {
-    response.status(400).send({
-      error: 'No password set'
-    })
-  }
-
-  const saltRound = 10
-  const passwordHash = await encrypt(password)
-
-  const peopleEdited = {
-    password: passwordHash,
-    modificationDate: new Date().toISOString()
-  }
-  try {
-    const result = await Person.findByIdAndUpdate(id, peopleEdited, { new: true })
-    result
-      ? response.json(result)
-      : next({
-        name: 'NotFound',
-        error: `Person with id ${id} does not exists`
-      })
-  } catch (error) {
-    next(error)
-  }
-})
-
 
 module.exports = peopleRouter
