@@ -5,15 +5,15 @@
   "main": "src/index.ts",
   "scripts": {
     "dev": "cross-env NODE_ENV=development ts-node-dev src/index.ts",
-    "start": "yarn build && cross-env NODE_ENV=production node build/src/index.js",
+    "start": "npm build && cross-env NODE_ENV=production node build/src/index.js",
     "build": "rimraf ./build && tsc",
     "lint": "eslint --ext .ts .",
     "lint:fix": "eslint --fix",
     "tsc": "tsc",
     "test": "cross-env NODE_ENV=test PORT=3002 jest --verbose --silent",
-    "test:watch": "yarn test --watch",
-    "test:posts": "yarn test tests/posts.test.ts",
-    "test:people": "yarn test tests/people.test.ts"
+    "test:watch": "npm test --watch",
+    "test:posts": "npm test tests/posts.test.ts",
+    "test:people": "npm test tests/people.test.ts"
   },
   "keywords": [],
   "author": "",

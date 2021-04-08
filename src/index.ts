@@ -44,7 +44,6 @@ app.get('/', (request: Request, response: Response) => {
   response.send('<h1>Hi from dev Portfolio v1.0.0</h1>')
 })
 
-
 app.use('/api/people', peopleRouter)
 app.use('/api/posts', postRouter)
 
