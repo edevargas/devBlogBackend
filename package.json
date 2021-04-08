@@ -5,15 +5,15 @@
   "main": "src/index.ts",
   "scripts": {
     "dev": "cross-env NODE_ENV=development ts-node-dev src/index.ts",
-    "start": "npm run build:prod && cross-env NODE_ENV=production node build/src/index.js",
+    "start": "yarn build:prod && cross-env NODE_ENV=production node build/src/index.js",
     "build:prod": "tsc",
-    "lint": "npm run eslint --ext .ts .",
-    "lint:fix": "npm run eslint --fix",
+    "lint": "yarn eslint --ext .ts .",
+    "lint:fix": "yarn eslint --fix",
     "tsc": "tsc",
     "test": "cross-env NODE_ENV=test PORT=3002 jest --verbose --silent",
-    "test:watch": "npm run test --watch",
-    "test:posts": "npm run test tests/posts.test.ts",
-    "test:people": "npm run test tests/people.test.ts"
+    "test:watch": "yarn test --watch",
+    "test:posts": "yarn test tests/posts.test.ts",
+    "test:people": "yarn test tests/people.test.ts"
   },
   "keywords": [],
   "author": "",
