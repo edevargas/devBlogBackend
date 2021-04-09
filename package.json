@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development ts-node-dev src/index.ts",
     "start": "yarn build:prod && cross-env NODE_ENV=production node build/src/index.js",
-    "build:prod": "rimraf buid && tsc",
+    "build:prod": "rimraf buid && yarn tsc",
     "lint": "yarn eslint --ext .ts .",
     "lint:fix": "yarn eslint --fix",
     "tsc": "tsc",
