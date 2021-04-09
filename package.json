@@ -5,7 +5,7 @@
   "main": "src/index.ts",
   "scripts": {
     "dev": "cross-env NODE_ENV=development ts-node-dev src/index.ts",
-    "start": "yarn build && cross-env NODE_ENV=production node build/src/index.js",
+    "start": "yarn build && cross-env NODE_ENV=production",
     "build": "rimraf buid && tsc",
     "lint": "yarn eslint --ext .ts .",
     "lint:fix": "yarn eslint --fix",
