@@ -45,3 +45,4 @@ speed-measure-plugin*.json
 
 #Environment
 .env
+yarn.lock
